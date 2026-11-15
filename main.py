@@ -20,6 +20,11 @@ def afficher_taches():
 
 def rechercher_tache():
     mot_cle = input("Mot-clé à rechercher : ")
+
+    if mot_cle.strip() == "":
+        print("Veuillez saisir un mot-clé.")
+        return
+
     trouve = False
 
     for i in range(len(taches)):
@@ -29,7 +34,7 @@ def rechercher_tache():
 
     if trouve == False:
         print("Aucune tâche trouvée.")
-
+        
 while True:
     print("\n=== GESTION DES TÂCHES ===")
     print("1. Ajouter une tâche")
